@@ -1,0 +1,70 @@
+<div class="card">
+  <div class="card-header">
+    Order Form 
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <form [formGroup]="orderForm">
+        <div class="row mb-2 col-md-12">
+          <div class="col-md-1">
+            <label class="form-label"  
+            for="designationId">Designation</label>  
+            
+          </div>
+          <div class="col-md-3">
+            <input type="text" class="col-md-2 form-control" placeholder="Designation" aria-label="First name">
+          </div>
+          <div class="col-md-1">
+            <label class="form-label"  
+            for="designationId">Email</label>  
+            
+          </div>
+
+          <div class="col-md-3">
+            <input type="text" class="col-md-2 form-control" placeholder="Email" aria-label="First name">
+          </div>
+          <div class="col-md-1">
+            <label class="form-label"  
+            for="designationId">Email</label>  
+            
+          </div>
+
+          <div class="col-md-3">
+            <input type="text" class="col-md-2 form-control" placeholder="Email" aria-label="First name">
+          </div>
+          <div class="col-md-1">
+            <label class="form-label"  
+            for="designationId">Email</label>  
+            
+          </div>
+
+          <div class="col-md-3">
+            <input type="text" class="col-md-2 form-control" placeholder="Email" aria-label="First name">
+          </div>
+        </div>
+        <div formArrayName="items" *ngFor="let item of orderFormGroups.controls; let i = index;">
+  
+     <div class="row col-md-12 mb-3" [formGroupName]="i">
+      <app-mycomponent></app-mycomponent>
+      <!-- <div class="col-md-4">
+        <input formControlName="name" placeholder="Item name" class="form-control"  >
+       </div>
+       <div class="col-md-4">
+        <input formControlName="description" placeholder="Item description" class="form-control"  >
+      </div>
+      <div class="col-md-4">
+        <input formControlName="price" placeholder="Item price" class="form-control"  >
+      </div> -->
+     
+   
+     </div>
+     
+        </div>
+        <button type="button" class="btn btn-outline-secondary mr-3" (click)="addItem()">Add Item</button>
+        <button type="button" class="btn btn-outline-secondary mr-3" [disabled]=!orderForm.valid>Save</button>
+      </form>
+    </div>
+    
+  </div>
+</div>
+
